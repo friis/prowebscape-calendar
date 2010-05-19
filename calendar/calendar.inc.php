@@ -1,6 +1,6 @@
 <?php
 #$basePath = '/Users/prowebscape/Sites/CMS/MODx/current/assets/snippets/calendar/';
-require_once($basePath.'classes/simplepie/simplepie.inc');
+require_once($basePath.'classes/simplepie/simplepie.inc.php');
 require_once($basePath.'classes/class.simplepie-gcalendar.php');
 require_once($basePath.'classes/class.Calendar_Events.php');
 
@@ -13,7 +13,7 @@ $useCache   	= (isset($useCache))		? $useCache 		: true;
 $template   	= (isset($template))		? $template 		: 'default';
 $display    	= (isset($display)) 		? $display  		: 'calendar';
 $limit      	= (isset($limit))   		? $limit    		: 10;
-$showPastEvents	= (isset($showPastEvents))  ? $showPastEvents   : true;
+$showPastEvents	= (isset($showPastEvents))  ? $showPastEvents   : false;
 /* end of Snippet Parameters */
 
 extract($_GET);    
@@ -25,6 +25,7 @@ $startMax = gmdate('Y-m-d',mktime(0, 0, 0, gmdate($month)+2  , gmdate("d"), gmda
 
 if (!$showPastEvents) {
     $startMin = date("Y-m-d");
+	//echo "test";
 }
 
 /* Set Correct Offset */
@@ -101,12 +102,14 @@ $feed = new SimplePie_GCalendar();
                 'startMonth'    => date('n', $startDate - $offset),
                 'startYear'     => date('Y', $startDate - $offset),
                 'startHour'     => date('g', $startDate - $offset),
+				'startHour24'   => date('G', $startDate - $offset),
                 'startMinute'   => date('i', $startDate - $offset),
                 'startMeridiem' => date('A', $startDate - $offset),
                 'endDay'        => date('j', $endDate - $offset),
                 'endMonth'      => date('n', $endDate - $offset),
                 'endYear'       => date('Y', $endDate - $offset),
                 'endHour'       => date('g', $endDate - $offset),
+				'endHour24'		=> date('G', $endDate - $offset),
                 'endMinute'     => date('i', $endDate - $offset),
                 'endMeridiem'   => date('A', $endDate - $offset),
                 'calName'		=> $calName,
