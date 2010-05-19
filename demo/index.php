@@ -263,6 +263,11 @@
 							<div class="clear">&nbsp;</div>
 						</li>
 						<li>
+							<span class="name">[+startHour24+], [+endHour24+]</span>
+							<span class="value">24-hour format of an hour without leading zeros	1 through 24</span>
+							<div class="clear">&nbsp;</div>
+						</li>						
+						<li>
 							<span class="name">[+startMinute+], [+endMinute+]</span>
 							<span class="value">Minutes with leading zeros - 00 to 59</span>
 							<div class="clear">&nbsp;</div>
