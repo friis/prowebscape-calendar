@@ -13,7 +13,7 @@ $useCache   	= (isset($useCache))		? $useCache 		: true;
 $template   	= (isset($template))		? $template 		: 'default';
 $display    	= (isset($display)) 		? $display  		: 'calendar';
 $limit      	= (isset($limit))   		? $limit    		: 10;
-$showPastEvents	= (isset($showPastEvents))  ? $showPastEvents   : false;
+$showPastEvents	= (isset($showPastEvents))  ? $showPastEvents   : TRUE;
 /* end of Snippet Parameters */
 
 extract($_GET);    
