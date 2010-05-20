@@ -23,7 +23,7 @@ $month = isset($_GET['month'])  ? $month    : date('m');
 $startMin = gmdate('Y-m-d',mktime(0, 0, 0, gmdate($month)-2  , gmdate("d"), gmdate($year)));
 $startMax = gmdate('Y-m-d',mktime(0, 0, 0, gmdate($month)+2  , gmdate("d"), gmdate($year)));
 
-if (!$showPastEvents) {
+if (!$showPastEvents == false ||$showPastEvents == FALSE ) {
     $startMin = date("Y-m-d");
 	//echo "test";
 }
